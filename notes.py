@@ -1,11 +1,15 @@
 import StringIO
 import os
+
+NOTE_PATH = os.environ.get('NOTES_PATH')
+
 def list_tag(tags):
     if len(tags) == 0:
         pass
-    for tag in tags:
-        
-        filename = "/Users/thomasfortier/docs/notes/"+tag+".txt"
+    for tag in tags:    
+        filename = NOTE_PATH + "/" + tag + ".txt"
+        if not os.path.isfile(filename):            
+            continue
         f = open(filename)
         if os.stat(filename).st_size == 0:
             continue
@@ -30,12 +34,13 @@ def add_note(*argv):
     if not message:
         list_tag(tags)
         return
+
     print tags
     print message
     message = "* " + message
 
     for tag in tags:
-        fileName = "/Users/thomasfortier/docs/notes/"+tag+".txt"
+        fileName = NOTE_PATH + "/" + tag + ".txt"
         f = open(fileName, 'a+')
         f.write(message + "\n\r")
         f.close()
