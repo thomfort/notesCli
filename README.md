@@ -29,9 +29,9 @@ $ notes @foo @bar My first note
 ['foo', 'bar']
  My first note
 
-$ notes @py "My commande line" @tips
+$ notes @py "My command line" @tips
 ['py', 'tips']
- My commande line @tips
+ My command line @tips
 ```
 
 ### List notes
@@ -39,4 +39,9 @@ $ notes @py "My commande line" @tips
 $ notes @foo
 @foo
 *  My first note
+```
+
+### List tags
+```
+$ notes tags
 ```
