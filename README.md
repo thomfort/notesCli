@@ -10,18 +10,28 @@ mkdir ~/.notes
 ```
 Insert variable into your .bash_profile or .zshrc
 ```
-export NOTES_PATH=~/.notes
+export NOTES_PATH=$HOME/.notes
+# Fish
+set -x NOTES_PATH $HOME/.notes
 ```
 
-Add notes in your path
+Add notes in your path. In this example I put my code into ~/Codes.
 ```
-export PATH=~/Codes/notesCli/bin:$PATH
+export PATH=$HOME/Codes/notesCli/bin:$PATH
+# Fish 
+set PATH $HOME/Codes/notesCli/bin $PATH
 ```
 
 ## Examples
 ### Add note
-```
+```bash
 $ notes @foo @bar My first note
+['foo', 'bar']
+ My first note
+
+$ notes @py "My commande line" @tips
+['py', 'tips']
+ My commande line @tips
 ```
 
 ### List notes
